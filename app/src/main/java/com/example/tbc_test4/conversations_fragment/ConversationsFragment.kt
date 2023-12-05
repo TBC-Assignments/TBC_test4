@@ -9,7 +9,6 @@ import com.example.tbc_test4.BaseFragment
 import com.example.tbc_test4.databinding.FragmentConversationsBinding
 import kotlinx.coroutines.launch
 
-
 class ConversationsFragment : BaseFragment<FragmentConversationsBinding>(FragmentConversationsBinding::inflate) {
 
     private val viewModel: ConversationsFragmentViewModel by viewModels()
@@ -19,7 +18,6 @@ class ConversationsFragment : BaseFragment<FragmentConversationsBinding>(Fragmen
         setUpRv()
         listeners()
         bindObservers()
-        viewModel.jsonParse()
     }
 
     private fun setUpRv(){
@@ -29,9 +27,15 @@ class ConversationsFragment : BaseFragment<FragmentConversationsBinding>(Fragmen
     }
 
     private fun listeners(){
-        binding.btnSearch.setOnClickListener {
-
+        with(binding){
+            btnSearch.setOnClickListener {
+                search(etSearchBar.text.toString())
+            }
         }
+    }
+
+    private fun search(text: String){
+        viewModel.search(text)
     }
 
     private fun bindObservers(){

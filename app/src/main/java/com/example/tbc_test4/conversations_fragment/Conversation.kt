@@ -15,8 +15,11 @@ data class Conversation(
     @Json(name = "laste_message_type") val lastMessageType: TYPE
 ) {
     enum class TYPE {
+        @Json(name = "text")
         TEXT,
+        @Json(name = "voice")
         VOICE,
+        @Json(name = "file")
         FILE
     }
 }

@@ -8,4 +8,5 @@
     <color name="edit_text_background">#FF1A282F</color>
     <color name="search_btn_gradient_one">#FF40DF9F</color>
     <color name="search_btn_gradient_two">#FF3ED598</color>
+    <color name="grey_separator">#35FFB8C2</color>
 </resources>
